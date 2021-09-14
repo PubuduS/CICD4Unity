@@ -6,13 +6,20 @@ public class StartingMessage : MonoBehaviour
 {
     [SerializeField]
     private GameObject m_Load;
+
+    [SerializeField]
+    private GameObject m_AvatarGUI;
+    
+    [SerializeField]
     private GameObject m_StartMessage;
+
+    [SerializeField]
     private GameObject m_ThankMessage;
     // Start is called before the first frame update
     void Start()
     {
-        m_StartMessage = GameObject.Find("Message");
-        m_ThankMessage = GameObject.Find("ThankYou");
+        //m_StartMessage = GameObject.Find("Message");
+        //m_ThankMessage = GameObject.Find("ThankYou");
         m_ThankMessage.SetActive(false);
         m_StartMessage.SetActive(true);
         StartCoroutine(ShowStartingMessage()); 
@@ -28,6 +35,7 @@ public class StartingMessage : MonoBehaviour
         yield return new WaitForSeconds(3);
         m_ThankMessage.SetActive(false);
         Destroy(m_ThankMessage);
+        m_AvatarGUI.SetActive(true);
         Destroy(m_Load);
     }
 

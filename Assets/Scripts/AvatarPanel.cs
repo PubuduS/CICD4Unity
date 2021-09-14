@@ -10,11 +10,11 @@ public class AvatarPanel : MonoBehaviour
     private ScrollingObjectCollection scrollview;
 
     [SerializeField]
-    private GameObject scrollParent;
+    private GameObject parent;
 
     private int m_CellIndex = -1;
     private const int m_NumberOfAvatars = 2;
-
+    bool something = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +35,14 @@ public class AvatarPanel : MonoBehaviour
             {
                 m_CellIndex -= 1;
             }  
+    }
+
+    public void SetVisibility() 
+    {
+        bool isObjectActive = parent.activeSelf;
+        isObjectActive = !isObjectActive;
+        parent.SetActive(isObjectActive);
+
     }
   
 
