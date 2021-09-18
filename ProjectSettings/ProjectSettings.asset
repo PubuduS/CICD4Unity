@@ -603,7 +603,7 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: MRTKGUI
   metroPackageVersion: 1.0.0.0
-  metroCertificatePath: E:\Unity\MRTK_GUI\Assets\WSATestCertificate.pfx
+  metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
   metroCertificateSubject: DefaultCompany
   metroCertificateIssuer: DefaultCompany
