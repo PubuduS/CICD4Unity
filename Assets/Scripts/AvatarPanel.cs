@@ -14,12 +14,6 @@ public class AvatarPanel : MonoBehaviour
 
     private int m_CellIndex = -1;
     private const int m_NumberOfAvatars = 2;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     void Update()
     {
