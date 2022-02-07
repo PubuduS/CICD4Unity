@@ -9,7 +9,7 @@ using UnityEngine;
 public class Build
 {
     // 10.0.17763.0
-    private const string UWP_SDK_VERSION = "10.0.19041.0";  
+    private const string UWP_SDK_VERSION = "10.0.19041.0";
 
     /// <summary>
     /// start build process for HoloLens App
@@ -51,15 +51,17 @@ public class Build
         {
             scenes = EditorBuildSettings.scenes.Select(s => s.path).ToArray(),
             targetGroup = BuildTargetGroup.WSA,
-            target = BuildTarget.WSAPlayer,
-            locationPathName = locationPathName
+            target = BuildTarget.WSAPlayer,            
+            locationPathName = locationPathName            
         };
+
         PlayerSettings.SetScriptingBackend(opts.targetGroup, ScriptingImplementation.IL2CPP);
         EditorUserBuildSettings.wsaUWPSDK = UWP_SDK_VERSION;
-
+        EditorUserBuildSettings.wsaSubtarget = WSASubtarget.HoloLens;
         BuildPipeline.BuildPlayer(opts);
         Debug.Log("COMPLETED Unity Build:" + opts.locationPathName);
-    }
+                
+}
 
     /// <summary>
     /// Updating Visual Studio project file
@@ -78,7 +80,7 @@ public class Build
             "<AppxBundle>Always</AppxBundle>\r\n" + //Force creating App Bundle
             "    <GenerateAppInstallerFile>True</GenerateAppInstallerFile>\r\n" + //..and App Installer (for automatic update)
             "    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>\r\n" + //doesn't matter because version is generate everytime
-            "    <AppxBundlePlatforms>ARM64</AppxBundlePlatforms>\r\n" + //HoloLens uses x86
+            "    <AppxBundlePlatforms>ARM64</AppxBundlePlatforms>\r\n" + //HoloLens uses ARM64
             "    <AppInstallerUpdateFrequency>1</AppInstallerUpdateFrequency>\r\n" + //auto-update enabled
             "    <AppInstallerCheckForUpdateFrequency>OnApplicationRun</AppInstallerCheckForUpdateFrequency>\r\n" + //try updating every App start
             "    <AppxPackageDir>\\\\sv201168\\Holographic\\UWP\\" + PlayerSettings.productName + "\\</AppxPackageDir>\r\n" + //network drive share where we keep our HoloLens App-Builds
