@@ -83,8 +83,8 @@ public class Build
             "    <AppxBundlePlatforms>ARM64</AppxBundlePlatforms>\r\n" + //HoloLens uses ARM64
             "    <AppInstallerUpdateFrequency>1</AppInstallerUpdateFrequency>\r\n" + //auto-update enabled
             "    <AppInstallerCheckForUpdateFrequency>OnApplicationRun</AppInstallerCheckForUpdateFrequency>\r\n" + //try updating every App start
-            "    <AppxPackageDir>\\\\sv201168\\Holographic\\UWP\\" + PlayerSettings.productName + "\\</AppxPackageDir>\r\n" + //network drive share where we keep our HoloLens App-Builds
-            "    <AppInstallerUri>http://holo-buildslave/UWP/" + PlayerSettings.productName + "/</AppInstallerUri>"); //HTTP-File Server (just mirroring the Network Drive)
+            "    <AppxPackageDir>" + locationPathName + PlayerSettings.productName + "\\</AppxPackageDir>"); //network drive share where we keep our HoloLens App-Builds
+            //"    <AppInstallerUri>http://holo-buildslave/UWP/" + PlayerSettings.productName + "/</AppInstallerUri>"); //HTTP-File Server (just mirroring the Network Drive)
         File.WriteAllText(vcxPath, content);
     }
 
