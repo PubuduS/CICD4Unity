@@ -78,11 +78,11 @@ public class Build
 
         content = content.Replace("<AppxBundle>Auto</AppxBundle>",
             "<AppxBundle>Always</AppxBundle>\r\n" + //Force creating App Bundle
-            "    <GenerateAppInstallerFile>True</GenerateAppInstallerFile>\r\n" + //..and App Installer (for automatic update)
+            "    <GenerateAppInstallerFile>False</GenerateAppInstallerFile>\r\n" + //..and App Installer (for automatic update)
             "    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>\r\n" + //doesn't matter because version is generate everytime
             "    <AppxBundlePlatforms>ARM64</AppxBundlePlatforms>\r\n" + //HoloLens uses ARM64
-            "    <AppInstallerUpdateFrequency>1</AppInstallerUpdateFrequency>\r\n" + //auto-update enabled
-            "    <AppInstallerCheckForUpdateFrequency>OnApplicationRun</AppInstallerCheckForUpdateFrequency>\r\n" + //try updating every App start
+            //"    <AppInstallerUpdateFrequency>1</AppInstallerUpdateFrequency>\r\n" + //auto-update enabled
+            //"    <AppInstallerCheckForUpdateFrequency>OnApplicationRun</AppInstallerCheckForUpdateFrequency>\r\n" + //try updating every App start
             "    <AppxPackageDir>" + locationPathName + PlayerSettings.productName + "\\</AppxPackageDir>"); //network drive share where we keep our HoloLens App-Builds
             //"    <AppInstallerUri>http://holo-buildslave/UWP/" + PlayerSettings.productName + "/</AppInstallerUri>"); //HTTP-File Server (just mirroring the Network Drive)
         File.WriteAllText(vcxPath, content);
