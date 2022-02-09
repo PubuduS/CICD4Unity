@@ -84,7 +84,7 @@ public class Build
             "    <AppInstallerUpdateFrequency>1</AppInstallerUpdateFrequency>\r\n" + //auto-update enabled
             "    <AppInstallerCheckForUpdateFrequency>OnApplicationRun</AppInstallerCheckForUpdateFrequency>\r\n" + //try updating every App start
             "    <AppxPackageDir>" + locationPathName + PlayerSettings.productName + "\\</AppxPackageDir>\r\n" + //network drive share where we keep our HoloLens App-Builds
-            "    <AppInstallerUri>http://10.70.157.108/" + PlayerSettings.productName + "/</AppInstallerUri>"); //HTTP-File Server (just mirroring the Network Drive)
+            "    <AppInstallerUri>https://built-artifacts.s3.us-east-2.amazonaws.com/" + PlayerSettings.productName + "/</AppInstallerUri>"); //HTTP-File Server (just mirroring the Network Drive)
         File.WriteAllText(vcxPath, content);
     }
 
