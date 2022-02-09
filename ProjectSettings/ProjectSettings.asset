@@ -132,6 +132,7 @@ PlayerSettings:
   - {fileID: 0}
   - {fileID: 2632414320013903552, guid: 91d07265d277e1446bf0f8b58dea5a93, type: 2}
   - {fileID: 832326933899269537, guid: 45546e67ab9db6b439901674d2aefcc1, type: 2}
+  - {fileID: 0}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -586,7 +587,8 @@ PlayerSettings:
     14: release
   additionalCompilerArguments: {}
   platformArchitecture: {}
-  scriptingBackend: {}
+  scriptingBackend:
+    Windows Store Apps: 1
   il2cppCompilerConfiguration: {}
   managedStrippingLevel: {}
   incrementalIl2cppBuild: {}
